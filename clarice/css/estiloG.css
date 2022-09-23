@@ -1,0 +1,102 @@
+body{
+	background-color:;
+	color: SaddleBrown;
+	margin:2em;			
+	font-family: 'Baloo Chettan 2', cursive;
+	font-size: 14pt;
+}
+blockquote {
+  font-family: 'Gloria Hallelujah', calibri;
+	/*Tamanho pode ser percentual ou fixo*/
+				/*font-size:  130%;*/
+  font-size: 150%;
+  color: OrangeRed;
+}
+img{
+	width:250px;
+	/* Precisa colocar as 3 propriedades na borda
+  border-width: thin, medium, thick
+  border-style: solid, dashed, dotted, double
+  border-color: black;
+  ou
+  border: colocam-se os 3 parâmetros separados por ,; 
+  */
+	border: thick solid SaddleBrown; 
+	border-radius: 20px;
+}
+figure{
+	text-align: center;
+}
+.link {
+	display: inline-block;
+}
+nav a{
+	padding: 5px 1em;
+	background-color: Wheat;
+	border-radius: 20px;
+	/*Está usando a cor de 
+	fonte de body
+	color: SaddleBrown;*/
+}
+nav a:hover {
+	background-color: OrangeRed;
+}
+a:hover{
+	/*Quando passa o mouse sobre o link*/
+	background-color: SaddleBrown;
+	color: white;
+}
+nav ul{
+		text-align: right;
+}
+span{
+	font-size: 18pt;
+}
+footer{
+	text-align: center;  
+}
+hr{
+	border: thin solid SaddleBrown;
+}
+#p1{
+	text-align: center;
+	border: thick solid SaddleBrown;
+	/*border-top: thick solid SaddleBrown;
+  	border-bottom: thin solid SaddleBrown;*/
+  	border-top: thin solid SaddleBrown;
+  	border-left: thin solid SaddleBrown;
+  	border-radius: 10px 30px;
+  	background-color: white;
+  	box-shadow: 10px 10px 5px SaddleBrown;
+	/*padding (distância interna) é a distância da borda até texto*/
+  	padding: 0.5em;
+	/*margin (distância externa) é a distâcia da borda com outro elemento acima ou abaixo*/
+  	margin: 1em;
+}
+p{
+	text-align: center;	
+}
+table, th, td{
+    border: medium solid SaddleBrown;      
+}      
+th{
+    background-color: Wheat;
+    padding: 0.5em;
+}
+td{
+    background-color: LemonChiffon;
+    padding: 0.5em;
+}
+table{
+    margin: 0 auto;      
+}
+
+
+
+
+
+
+
+
+
+

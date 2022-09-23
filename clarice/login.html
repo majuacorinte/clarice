@@ -1,0 +1,38 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link href="css/normalize.css" rel="stylesheet"/>
+	<link href="css/estiloG.css" rel="stylesheet"/>
+</head>
+<body>	
+<div class="container">
+	<form action="php/verifica.php" method="post">
+		<h1>Site sobre Tim Berners-Lee</h1>
+		<p>Faça login</p>
+		<div class="form-group">
+			<p>
+				<label for="email">E-mail</label>
+				<input type="text" class="form-control" name="email"/>
+			</p>
+		</div>
+		<div class="form-group">
+			<p>
+				<label for="senha">Senha</label>
+				<input type="password" class="form-control" name="senha"/>
+			</p>
+		</div>
+		<div class="form-group">
+			<p>
+				<select size="1" name="perfil" id="perfil">
+            		<option value="1">Visitante</option>
+            		<option value="2">Administrador</option>
+          		</select>
+          	</p>
+		</div>
+		<p>
+			<input type="submit" name="submit" class="btn btn-primary" value="Entrar"/>	
+		</p>
+	</form>
+</div>
+</body>
+</html>
