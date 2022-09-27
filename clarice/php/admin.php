@@ -12,12 +12,13 @@
 	$operacao = $_POST['operacao'];
 	$conexao = mysqli_connect('localhost','root','','clarice');
   	if($operacao=='incluir'){
-  		if((!empty($_POST['nome'])) && (!empty($_POST['email'])) && (!empty($_POST['senha'])) && (!empty($_POST['mensagem']))){
+  		if((!empty($_POST['nome'])) && (!empty($_POST['email'])) && (!empty($_POST['senha'])) && (!empty($_POST['mensagem'])) && (!empty($_POST['perfil']))){
     		$nome = $_POST['nome'];
     		$email = $_POST['email'];
     		$senha = md5($_POST['senha']);
-    		$mensagem = $_POST['mensagem']; 
-    		$sql = "INSERT INTO CADASTRO VALUES('','$nome','$email','$senha','$mensagem', 1);";
+    		$mensagem = $_POST['mensagem'];
+			$perfil = $_POST['perfil'];  
+    		$sql = "INSERT INTO CADASTRO VALUES('','$nome','$email','$senha','$mensagem', '$perfil');";
     		if(mysqli_query($conexao,$sql)){
   	  		echo '<p class="text-center">Obrigado por se cadastrar em nosso site!</p>';
       		echo '<p class="text-center"><a href="../html/admin.html"> Voltar</a></p>';

@@ -17,32 +17,25 @@
 <body>
   <?php
   $conexao = mysqli_connect("localhost","root","","clarice");
-  if((!empty($_POST['nome'])) && (!empty($_POST['email'])) && (!empty($_POST['senha'])) && (!empty($_POST['mensagem']))){
+  if((!empty($_POST['nome'])) && (!empty($_POST['email'])) && (!empty($_POST['mensagem']))){
     $nome = $_POST['nome'];
     $email = $_POST['email'];
-    $senha = md5($_POST['senha']);
     $mensagem = $_POST['mensagem']; 
-    $sql = "INSERT INTO CADASTRO VALUES('','$nome','$email','$senha','$mensagem', 1);";
+    $sql = "INSERT INTO CADASTRO VALUES('','$nome','$email','$mensagem', 1);";
     if(mysqli_query($conexao,$sql)){
-  	  echo '<p class="text-center">Obrigado pela visita! Cadastro realizado com sucesso!</p>';
+  	  echo '<p class="text-center">Obrigado pela visita! Mensagem enviada com sucesso!</p>';
       echo '<p class="text-center"><a href="../html/index.html"> Voltar</a></p>';
     }
     else{
-      echo '<p class="text-center">Erro ao cadastrar no Banco de Dados.</p>';
+      echo '<p class="text-center">Erro ao enviar mensagem.</p>';
       echo '<p class="text-center"><a href="../html/index.html"> Voltar</a></p>';
     }
   }
   else{
-    echo '<p class="text-center">Cadastro não efetuado.<br/>Favor preencher todos os campos.</p>';
+    echo '<p class="text-center">Mensagem não enviada.<br/>Favor preencher todos os campos.</p>';
     echo '<p class="text-center"><a href="../html/contato.html"> Voltar</a></p>';  
   }  	    
   ?>
 </body>
 </html>
-
-
-
-
-
-
 

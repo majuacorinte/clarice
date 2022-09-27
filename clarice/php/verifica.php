@@ -4,11 +4,11 @@
 */
 	if(isset($_POST["email"])){
     	$email = $_POST["email"];
-    	$senha = md5($_POST["senha"]);
+    	$senha = $_POST["senha"];
     	$perfil = $_POST["perfil"];
     }
 	$conexao = mysqli_connect("localhost","root","","clarice");
-	$sql = "SELECT * FROM CADASTRO WHERE EMAIL='$email' AND SENHA='$senha'";
+	$sql = "SELECT * FROM CADASTRO WHERE EMAIL='$email' AND SENHA='$senha' AND PERFIL='$perfil'";
 
 //Executar a instrução no banco
   	$selecionado = mysqli_query($conexao, $sql);
@@ -19,12 +19,26 @@
   		$vetor = mysqli_fetch_row($selecionado);
       
       	$perfilBanco = $vetor[5];
-  		if ($perfilBanco == 1)
+  		if ($perfil == 1){
   			header("Location:../html/index.html");
-    	else
+		  }
+    	else{
   			header("Location:../html/admin.html");
     	//$vetorSelecionado = mysqli_fetch_row($selecionado);
+		}
   	}
+	  if(mysqli_num_rows($selecionado)==2){
+		$vetor = mysqli_fetch_row($selecionado);
+	
+		$perfilBanco = $vetor[5];
+		if($perfilBanco == 2){
+			header("Location:../html/admin.html");
+		}
+		else{
+			header("Location:../html/index.html");
+		}
+	}
+	
   	else{
   		 echo '<p>Usuário não encontrado</p>';
   		 echo '<p><a href="../login.html">Voltar</a></p>';
